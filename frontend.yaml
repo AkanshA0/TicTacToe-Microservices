@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tictactoe-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tictactoe-frontend
+  template:
+    metadata:
+      labels:
+        app: tictactoe-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: akanshab/tictactoe-frontend:v1
+          env:
+            - name: API_BASE
+              valueFrom:
+                configMapKeyRef:
+                  name: tictactoe-frontend-cm
+                  key: API_BASE
+          ports:
+            - containerPort: 5001
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tictactoe-frontend
+spec:
+  selector:
+    app: tictactoe-frontend
+  ports:
+    - port: 80
+      targetPort: 5001
+      nodePort: 30081
+  type: NodePort
