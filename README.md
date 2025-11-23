@@ -83,6 +83,16 @@ Flask REST API with game logic
 - Clear separation of concerns.
 - Simplified maintenance and CI/CD.
 
+### Advantages of Microservices Architecture
+
+| Feature | Monolithic | Microservices |
+|----------|-------------|---------------|
+| Deployment | Single container | Two independent containers |
+| Scalability | Scales entire app | Scale frontend or backend independently |
+| Maintainability | Tightly coupled | Modular and easy to modify |
+| Security | Full external exposure | Backend internal-only |
+| Extensibility | Difficult to add features | Easier to add new services |
+
 ---
 
 ## 4. Application Components
@@ -99,3 +109,4 @@ Flask REST API with game logic
   - `GET /api/reset`
 - Contains the core Tic-Tac-Toe logic.
 - Deployed as a **ClusterIP Service** (internal only).
+
