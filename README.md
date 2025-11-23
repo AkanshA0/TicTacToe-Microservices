@@ -18,7 +18,24 @@ The frontend communicates internally with the backend through Kubernetes network
 
 ---
 
-## 2. Architecture Comparison
+## 2. Repository Structure
+
+├── frontend/
+│   ├── app.py
+│   ├── templates/
+│   │   └── index.html
+│   └── Dockerfile
+├── backend/
+│   ├── game_service.py
+│   └── Dockerfile
+├── frontend.yaml
+├── game-api.yaml
+├── kind-config.yaml
+└── README.md
+
+---
+
+## 3. Architecture Comparison
 
 ### Before: Monolithic Architecture
 
@@ -68,7 +85,7 @@ Flask REST API with game logic
 
 ---
 
-## 3. Application Components
+## 4. Application Components
 
 ### Frontend Service
 - Flask web server exposing port `5001`.
