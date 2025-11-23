@@ -19,7 +19,7 @@ The frontend communicates internally with the backend through Kubernetes network
 ---
 
 ## 2. Repository Structure
-
+<pre>
 ├── frontend/
 │   ├── app.py
 │   ├── templates/
@@ -32,7 +32,7 @@ The frontend communicates internally with the backend through Kubernetes network
 ├── game-api.yaml
 ├── kind-config.yaml
 └── README.md
-
+</pre>
 ---
 
 ## 3. Architecture Comparison
